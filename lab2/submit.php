@@ -22,7 +22,7 @@ if ($formSubmitted) {
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-    $error_message = '<div class="error-message">El email ya está en uso, use otro diferente.</div>';
+    echo "<script>alert('El email ya está en la base de datos, introduzca otro.'); location.href= 'index.html';</script>";
   } else {
     // Validar los datos del formulario
     $nombre = $_POST['nombre'];
