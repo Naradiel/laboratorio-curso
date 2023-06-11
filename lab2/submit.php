@@ -15,7 +15,7 @@ $error_message = '';
 $formSubmitted = isset($_POST['submit']); // Verificar si el formulario se envió
 
 if ($formSubmitted) {
-  // Verificar si el email ya está en uso
+  // Verificar si el email ya está en la base de datos
   $email = $_POST['email'];
 
   $sql = "SELECT * FROM usuario WHERE email='$email'";
@@ -45,7 +45,7 @@ if ($formSubmitted) {
     foreach ($patterns as $key => $pattern) {
       if (!preg_match($pattern, ${$key})) {
         $error_message = '<div class="error-message">Formato inválido para el campo ' . $key . '.</div>';
-        $hasErrors = true; // Establecemos la variable de errores en verdadero
+        $hasErrors = true; // Si se encontraron errores, establecemos la variable de errores en verdadero
       }
     }
 
