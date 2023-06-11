@@ -4,13 +4,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
   form.addEventListener('submit', function(event) {
     if (!validateForm()) {
-      event.preventDefault();
+      event.preventDefault(); // Evita que el formulario se envíe si no es válido
     }
   });
 
   inputs.forEach(function(input) {
     input.addEventListener('blur', function() {
-      validateInput(this);
+      validateInput(this); // Valida el campo de entrada cuando pierde el foco
     });
   });
 
@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     inputs.forEach(function(input) {
       if (!validateInput(input)) {
-        isValid = false;
+        isValid = false; // Verifica si los datos introducidos no son válidos
       }
     });
 
