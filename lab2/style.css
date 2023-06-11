@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+/* Estilo del fondo animado */
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #aa4488 50%, #cd5f55 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  color: #61284e;
+}
+
+.container {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+  color: #61284e;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #61284e;
+  font-weight: bolder;
+}
+
+/* Estilo del formulario */
+form {
+  width: 100%;
+  margin: auto;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+label {
+  font-size: 14px;
+}
+
+.form_input {
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #bd4776;
+  outline: none;
+  margin-bottom: 5px;
+  color: #ca5461;
+  position: relative;
+}
+
+/* Estilo de la botonera */
+.custom-btn {
+  background: linear-gradient(90deg, #ca5461, #aa4488);
+  border-color: #61254d; 
+  border-width: 3px;
+  color: white; 
+  font-size: 15px;
+}
+
+.custom-btn:hover {
+    border-color: #f3bbc1; 
+}
+
+/* Estilo de los mensajes e iconos */
+.invalid input,
+.invalid .error-message {
+  border-color: red;
+  display: block;
+  font-size: 12px;
+}
+
+.error-message {
+  color: #fe5f55;
+  font-size: 11px;
+  display: none;
+  margin-bottom: 5px;
+}
+
+.invalid {
+  border-color: #fe5f55 !important;
+}
+
+.valid-icon {
+  position: absolute;
+  right: 50px;
+  color: green;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.invalid-icon {
+  position: absolute;
+  right: 50px;
+  color: red;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
